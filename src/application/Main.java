@@ -12,7 +12,6 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.Scanner;
 
-import static entities.Order.fmt1;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,13 +38,11 @@ public class Main {
         int n = sc.nextInt();
         sc.nextLine();
 
-        Order order = new Order();
-        OrderItem orderItem;
-        Product product;
+        Order order = new Order(Instant.now(),client, OrderStatus.valueOf(orderStatus));
+
+
 
         for (int i = 0; i < n; i++) {
-            sc.nextLine();
-
             System.out.println("Enter #" + (i+1) + " item data:");
             System.out.print("Product name: ");
             String productName = sc.next();
@@ -54,8 +51,11 @@ public class Main {
             System.out.print("Quantity: ");
             int productQuantity = sc.nextInt();
 
-            order = new Order(Instant.now(),client, OrderStatus.valueOf(orderStatus));
-            order.getList().add(orderItem = new OrderItem(productQuantity,new Product(productName,productPrice)));
+            Product product = new Product(productName,productPrice);
+            OrderItem orderItem = new OrderItem(productQuantity,product);
+
+            order.addItem(orderItem);
+
         }
 
         System.out.println("ORDER SUMMARY:");

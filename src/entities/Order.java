@@ -3,6 +3,7 @@ package entities;
 import entities.enums.OrderStatus;
 
 import java.time.Instant;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ public class Order {
 
 
     public static DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    public static DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     private Instant moment;
     private OrderStatus status;
@@ -74,10 +76,10 @@ public class Order {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Order moment: " + moment + "\n");
+        sb.append("Order moment: " +fmt2.format(moment.atZone(ZoneId.systemDefault()))  + "\n");
         sb.append("Order status: " + status + "\n");
         sb.append("Client: " + client.getName() + " ");
-        sb.append("(" + client.getBirthDate() + ") ");
+        sb.append("(" + fmt1.format(client.getBirthDate()) + ") ");
         sb.append("- " + client.getEmail() + "\n");
         sb.append("Order Items: \n");
         for (OrderItem o : list) {
