@@ -1,20 +1,20 @@
 # Java Order Management System
 
 ## Overview
-This Java application serves as a basic Order Management System. It allows users to input client and order details, including multiple items per order.
+  This Java application serves as a basic Order Management System. It allows users to input client and order details, including multiple items per order.
 
 ## Usage
-1. Upon running the application, you'll be prompted to enter client information.
-2. Next, enter order details including order status and the number of items in the order.
-3. For each item, input product details such as name, price, and quantity.
-4. The application will generate an order summary at the end.
+  1. Upon running the application, you'll be prompted to enter client information.
+  2. Next, enter order details including order status and the number of items in the order.
+  3. For each item, input product details such as name, price, and quantity.
+  4. The application will generate an order summary at the end.
 
 ## Features
-- Client Management: Capture client information including name, email, and birthdate.
-- Order Creation: Specify the order status and add multiple items to the order.
-- Product Details: Input product name, price, and quantity for each order item.
+  - Client Management: Capture client information including name, email, and birthdate.
+  - Order Creation: Specify the order status and add multiple items to the order.
+  - Product Details: Input product name, price, and quantity for each order item.
 
-- ## Code Structure
+## Code Structure
 
 The project is organized into several Java classes, each serving a specific purpose in the Order Management System:
 
@@ -62,8 +62,8 @@ The `DateTimeFormatter fmt1` is used for formatting date and time in the `Order`
 ### File Organization
 
 The project is organized into the following packages:
-- `entities`: Contains the main entities of the system (`Order`, `OrderItem`, and `Product`).
-- `entities.enums`: Contains the `OrderStatus` enumeration.
+  - `entities`: Contains the main entities of the system (`Order`, `OrderItem`, and `Product`).
+  - `entities.enums`: Contains the `OrderStatus` enumeration.
 
 Feel free to explore each class to understand its role and the relationships between them. This organization promotes a modular and scalable structure for the Order Management System.
 
